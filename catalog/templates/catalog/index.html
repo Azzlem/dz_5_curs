@@ -1,0 +1,22 @@
+{% extends 'catalog/base.html' %}
+{% load tags_catalog %}
+{% block content %}
+
+<div class="row">
+    {% for object in object_list %}
+    <div class="col-sm-3">
+        <div class="card">
+            <div class="card-body">
+                <img src="{{ object.image|my_media }}" class="card-img-top" alt="preview">
+                <h5 class="card-title">{{object.name}}</h5>
+                <p class="card-text">{{object.price}}₽</p>
+                <p class="card-text">{{object.about}}</p>
+                <a class="btn btn-lg btn-block btn-outline-primary" href="{% url 'catalog:product' object.pk %}">BUY</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'catalog/base.html' %}
+{% load tags_catalog %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ object.title }}</h5>
+                <p class="card-text">{{ object.about}}</p>
+                <p class="card-text">Просмотров {{ object.views_count }}</p>
+                <a class="btn btn-outline-primary" href="/article_list/">Назад</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
