@@ -3,6 +3,7 @@ from django.urls import reverse_lazy, reverse
 from django.utils.text import slugify
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
+from catalog.forms import ArticleForm, ProductForm
 from catalog.models import Product, Article
 
 
@@ -11,9 +12,28 @@ class IndexListView(ListView):
     template_name = 'catalog/index.html'
 
 
+class ProductCreateView(CreateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:index')
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:index')
+
+
 class ProductDetailView(DetailView):
     model = Product
-    template_name = 'catalog/product.html'
+    template_name = 'catalog/product_detail.html'
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
+
+    def get_success_url(self):
+        return reverse('catalog:index')
 
 
 class ArticleListView(ListView):
@@ -32,7 +52,7 @@ class ArticleDetailView(DetailView):
 
 class ArticleCreateView(CreateView):
     model = Article
-    fields = ('title', 'about', 'image',)
+    form_class = ArticleForm
 
     def form_valid(self, form):
         if form.is_valid():

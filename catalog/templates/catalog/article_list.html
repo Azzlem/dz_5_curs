@@ -6,13 +6,12 @@
         <a class="btn btn-lg btn-block btn-outline-primary" href="/create/">Создать статью</a>
     </div>
 </div>
-
+<div class="col-12">
 <div class="row">
     {% for object in object_list %}
     {% if object.published%}
-    <div class="col-3">
+    <div class="col-4">
         <div class="row">
-
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{object.title}}</h5>
@@ -32,6 +31,6 @@
     {% endif %}
     {% endfor %}
 </div>
-
+</div>
 
 {% endblock %}

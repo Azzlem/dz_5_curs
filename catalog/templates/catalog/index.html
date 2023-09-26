@@ -1,7 +1,11 @@
 {% extends 'catalog/base.html' %}
 {% load tags_catalog %}
 {% block content %}
-
+<div class="col-12">
+    <div class="row">
+        <a class="btn btn-lg btn-block btn-outline-primary" href="/create_product/">Создать продукт</a>
+    </div>
+</div>
 <div class="row">
     {% for object in object_list %}
     <div class="col-sm-3">
@@ -12,6 +16,8 @@
                 <p class="card-text">{{object.price}}₽</p>
                 <p class="card-text">{{object.about}}</p>
                 <a class="btn btn-lg btn-block btn-outline-primary" href="{% url 'catalog:product' object.pk %}">BUY</a>
+                <a class="btn btn-lg btn-block btn-outline-primary" href="{% url 'catalog:update_product' object.pk %}">Edit</a>
+                <a class="btn btn-lg btn-block btn-outline-primary" href="{% url 'catalog:delete_product' object.pk %}">Delete</a>
             </div>
         </div>
     </div>
