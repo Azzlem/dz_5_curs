@@ -3,7 +3,7 @@
 {% block content %}
 <div class="col-12">
     <div class="row">
-        <a class="btn btn-lg btn-block btn-outline-primary" href="/create/">Создать статью</a>
+        <a class="btn btn-lg btn-block btn-outline-primary" href="{% url 'catalog:create_article' %}">Создать статью</a>
     </div>
 </div>
 <div class="col-12">
@@ -25,7 +25,6 @@
                        href="{% url 'catalog:delete_article' object.pk %}">Удалить</a>
                 </div>
             </div>
-
         </div>
     </div>
     {% endif %}

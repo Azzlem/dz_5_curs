@@ -10,7 +10,7 @@
                 <p class="card-text">{{ object.price }}₽</p>
                 <p class="card-text">{{ object.about|truncatechars:100 }}</p>
                 <p class="card-text">New batch from {{ object.updated_at }}</p>
-                <button type="button" class="btn btn-lg btn-block btn-outline-primary">BUY</button>
+                <a class="btn btn-outline-primary" href="{% url 'catalog:product_list' %}">Назад</a>
 
             </div>
         </div>

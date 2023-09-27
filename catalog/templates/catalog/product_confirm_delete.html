@@ -10,7 +10,7 @@
                         {% csrf_token %}
                         <p>Хотите удалить продукт "{{object.title}} ?"</p>
                         <button type="submit" class="btn btn-danger">Подтвердить</button>
-                        <a class="btn btn-outline-primary" href="/article_list/">ОТМЕНА</a>
+                        <a class="btn btn-outline-primary" href="{% url 'catalog:product_list' %}">ОТМЕНА</a>
                     </form>
                 </div>
             </div>
