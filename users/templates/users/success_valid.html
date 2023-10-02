@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-3">
+            <h4>
+                Спасибо что воспользовались нашим сервисом авторизация прошла успешно!
+            </h4>
+            <a href="{% url 'catalog:product_list' %}">Перейти к продукту</a>
+        </div>
+
+    </div>
+
+{% endblock %}

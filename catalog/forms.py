@@ -17,7 +17,7 @@ class ArticleForm(forms.ModelForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = '__all__'
+        exclude = ('user_creator',)
 
     def clean_name(self):
         cleaned_data = self.cleaned_data.get('name')

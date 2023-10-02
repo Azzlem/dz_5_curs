@@ -2,7 +2,8 @@ from datetime import datetime
 
 from django.db import models
 
-NULLABLE = {'blank': True, 'null': True}
+from default import NULLABLE
+from users.models import User
 
 
 class Category(models.Model):
@@ -23,6 +24,8 @@ class Product(models.Model):
     image = models.ImageField(upload_to='media/', verbose_name='Превью', **NULLABLE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.IntegerField(verbose_name='Цена')
+
+    user_creator = models.ForeignKey(User, on_delete=models.CASCADE, **NULLABLE)
 
     def __str__(self):
         return f"{self.name} {self.price}"
