@@ -72,5 +72,5 @@ def recovery_view(request):
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[user.email],
         )
-    return render(request, 'users/recovery.html')
+    return render(request, 'users/login.html.html')
 
