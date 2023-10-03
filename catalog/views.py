@@ -25,7 +25,6 @@ class ProductCreateView(CreateView):
         return reverse('catalog:product_list')
 
 
-
 class ProductUpdateView(UpdateView):
     model = Product
     form_class = ProductForm
