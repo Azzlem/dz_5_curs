@@ -18,7 +18,9 @@ class ProductCreateView(CreateView):
     form_class = ProductForm
 
     def form_valid(self, form):
-        Product.user_creator = self.request.user
+        self.object = form.save()
+        self.object.user_creator = self.request.user
+        self.object.save()
         return super().form_valid(form)
 
     def get_success_url(self):
