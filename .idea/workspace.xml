@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1b9bdb1-5c49-4e78-8b6e-8ae39e5d675a" name="Changes" comment="clean">
-      <change beforePath="$PROJECT_DIR$/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Azzlem/PycharmProjects/base",
+    "last_opened_file_path": "C:/Users/Azzlem/DJ/dz_5_curs",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
@@ -107,7 +107,8 @@
       <workItem from="1696325508810" duration="1011000" />
       <workItem from="1696326532219" duration="729000" />
       <workItem from="1696328392909" duration="696000" />
-      <workItem from="1696352212097" duration="2162000" />
+      <workItem from="1696352212097" duration="4389000" />
+      <workItem from="1696361069592" duration="324000" />
     </task>
     <task id="LOCAL-00001" summary="first step">
       <created>1695742714193</created>
