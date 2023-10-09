@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.core.cache import cache
 from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
@@ -57,6 +59,18 @@ class ProductUpdateView(UpdateView):
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'catalog/product_detail.html'
+
+    # def get_context_data(self, **kwargs):
+    #     version_list = super().get_context_data(**kwargs)
+    #     if settings.CACHE_ENABLED:
+    #         key = f'subject_list_{self.object.pk}'
+    #         subject_list = cache.get(key)
+    #         if subject_list is None:
+    #             subject_list = self.object.subject_set.all()
+    #     else:
+    #         subject_list = self.object.subject_set.all()
+    #     context_data['subjects'] = subject_list
+    #     return context_data
 
 
 class ProductDeleteView(DeleteView):

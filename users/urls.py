@@ -13,4 +13,5 @@ urlpatterns = [
     path('profile/', ProfileView.as_view(), name='profile'),
     path('verification/', verification_view, name='verification'),
     path('recovery/', recovery_view, name='recovery')
+
 ]

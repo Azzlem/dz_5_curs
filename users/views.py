@@ -58,19 +58,19 @@ class ProfileView(UpdateView):
 
 def recovery_view(request):
     if request.method == 'POST':
-        input_email = request.POST.get('email')
+        try:
+            input_email = request.POST.get('email')
 
-        user = User.objects.get(email=input_email)
-        user_password = secrets.token_hex(11)
+            user = User.objects.get(email=input_email)
+            user_password = secrets.token_hex(11)
 
-        user.set_password(user_password)
-        user.save()
+            user.set_password(user_password)
+            user.save()
 
-        send_mail(
-            subject='Восстановление пароля',
-            message=f'Ваш новый пароль  {user_password}',
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[user.email],
-        )
+            send_mail(subject='Восстановление пароля', message=f'Ваш новый пароль  {user_password}',
+                      from_email=settings.EMAIL_HOST_USER, recipient_list=[user.email], )
+            return redirect('users:login')
+        except:
+            return render(request, 'users/unsuccess_valid.html')
+
     return render(request, 'users/recovery.html')
-
